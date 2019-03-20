@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Applicants
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2/applicants';
+    public static $url = 'https://api.fountain.com/v2';
 
     /**
      * @var string
@@ -123,7 +123,7 @@ class Applicants
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("DELETE", "applicants/$applicantId", [
+        $request = $client->request("DELETE", "/applicants/$applicantId", [
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -143,7 +143,7 @@ class Applicants
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "applicants/$applicantId",[
+        $request = $client->request("GET", "/applicants/$applicantId",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -171,7 +171,7 @@ class Applicants
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "applicants/$applicantId", [
+        $request = $client->request("PUT", "/applicants/$applicantId", [
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -201,7 +201,7 @@ class Applicants
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "applicants/$applicantId/secure_documents", [
+        $request = $client->request("GET", "/applicants/$applicantId/secure_documents", [
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ]
@@ -221,7 +221,7 @@ class Applicants
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "applicants/$applicantId/advance", [
+        $request = $client->request("PUT", "/applicants/$applicantId/advance", [
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
