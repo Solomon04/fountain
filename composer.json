@@ -1,0 +1,25 @@
+{
+    "name": "fountain/fountain-php",
+    "description": "Fountain offers a REST API that allows you to programmatically manage your applicants. You can use these API's to automate tasks, trigger actions when changes occur, or synchronize your external systems with Fountain. ",
+    "keywords": [
+        "fountain",
+        "applicant tracking system",
+        "api"
+    ],
+    "homepage": "https://get.fountain.com/",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "vlucas/phpdotenv": "^3.3",
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "authors": [
+        {
+            "name": "Solomon Antoine",
+            "email": "Antoinesolomon5@gmail.com"
+        }
+    ]
+}
