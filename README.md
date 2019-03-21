@@ -2,7 +2,7 @@
 Fountain is an automated tracking system. This is a PHP library for the software, built from their curl-library. Please check that out here: https://developer.fountain.com/docs
 
 ### Getting Started
-To download the package run `composer require solomon_04/fountain-php`
+To download the package run `composer require fountain/fountain-php`
 
 Here is an example of how to use the package:  
 
