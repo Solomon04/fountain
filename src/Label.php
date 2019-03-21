@@ -15,7 +15,7 @@ use GuzzleHttp\Client;
 class Label
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -57,7 +57,7 @@ class Label
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/applicants/$applicantId/labels",[
+        $request = $client->request("GET", "applicants/$applicantId/labels",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -80,7 +80,7 @@ class Label
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/applicants/$applicantId/labels/$title",[
+        $request = $client->request("PUT", "applicants/$applicantId/labels/$title",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -105,7 +105,7 @@ class Label
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/stages/$stagedId/labels",[
+        $request = $client->request("PUT", "stages/$stagedId/labels",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

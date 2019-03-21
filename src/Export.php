@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Export
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -56,7 +56,7 @@ class Export
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("POST", "/timestamped_exports",[
+        $request = $client->request("POST", "timestamped_exports",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -80,7 +80,7 @@ class Export
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/timestamped_exports/$id",[
+        $request = $client->request("GET", "timestamped_exports/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -99,7 +99,7 @@ class Export
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/timestamped_exports/templates",[
+        $request = $client->request("GET", "timestamped_exports/templates",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

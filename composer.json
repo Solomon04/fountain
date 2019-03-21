@@ -16,9 +16,7 @@
         "ext-json": "*"
     },
     "autoload": {
-      "Fountain": [
-        "src/"
-      ]
+      "psr-4": { "Fountain\\" : "src/" }
     },
     "authors": [
         {

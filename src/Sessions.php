@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Sessions
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -57,7 +57,7 @@ class Sessions
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/sessions",[
+        $request = $client->request("GET", "sessions",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -82,7 +82,7 @@ class Sessions
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/booked_slots/$bookedSlotId/cancel",[
+        $request = $client->request("GET", "booked_slots/$bookedSlotId/cancel",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

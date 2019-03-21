@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Option
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -56,7 +56,7 @@ class Option
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("POST", "/option_banks",[
+        $request = $client->request("POST", "option_banks",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -81,7 +81,7 @@ class Option
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/option_banks",[
+        $request = $client->request("GET", "option_banks",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -107,7 +107,7 @@ class Option
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/option_banks/$id",[
+        $request = $client->request("PUT", "option_banks/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -131,7 +131,7 @@ class Option
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("DELETE", "/option_banks/$id",[
+        $request = $client->request("DELETE", "option_banks/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

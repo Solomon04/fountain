@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Workers
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -56,7 +56,7 @@ class Workers
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/workers",[
+        $request = $client->request("GET", "workers",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -81,7 +81,7 @@ class Workers
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/workers/$id",[
+        $request = $client->request("GET", "workers/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -102,7 +102,7 @@ class Workers
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/workers/$id",[
+        $request = $client->request("PUT", "workers/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

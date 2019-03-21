@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Positions
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -54,7 +54,7 @@ class Positions
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/funnels",[
+        $request = $client->request("GET", "funnels",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -75,7 +75,7 @@ class Positions
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/funnels/$funnelId",[
+        $request = $client->request("PUT", "funnels/$funnelId",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -99,7 +99,7 @@ class Positions
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/funnels/$funnelId/stages",[
+        $request = $client->request("GET", "funnels/$funnelId/stages",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Slot
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -65,7 +65,7 @@ class Slot
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("POST", "/available_slots",[
+        $request = $client->request("POST", "available_slots",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -98,7 +98,7 @@ class Slot
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/stages/$stageId/available_slots",[
+        $request = $client->request("GET", "stages/$stageId/available_slots",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -118,7 +118,7 @@ class Slot
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("DELETE", "/available_slots/$stageId",[
+        $request = $client->request("DELETE", "available_slots/$stageId",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -139,7 +139,7 @@ class Slot
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("POST", "/available_slots/$slotId/confirm",[
+        $request = $client->request("POST", "available_slots/$slotId/confirm",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],

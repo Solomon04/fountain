@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 class Notes
 {
     /** @var string  */
-    public static $url = 'https://api.fountain.com/v2';
+    public static $url = 'https://api.fountain.com/v2/';
 
     /**
      * @var string
@@ -55,7 +55,7 @@ class Notes
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("GET", "/applicants/$applicantId/notes",[
+        $request = $client->request("GET", "applicants/$applicantId/notes",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -76,7 +76,7 @@ class Notes
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("POST", "/applicants/$applicantId/notes",[
+        $request = $client->request("POST", "applicants/$applicantId/notes",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -100,7 +100,7 @@ class Notes
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("DELETE", "/applicants/$applicantId/notes/$id",[
+        $request = $client->request("DELETE", "applicants/$applicantId/notes/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
@@ -122,7 +122,7 @@ class Notes
     {
         self::validateConfig();
         $client = new Client(['base_uri' => self::$url]);
-        $request = $client->request("PUT", "/applicants/$applicantId/notes/$id",[
+        $request = $client->request("PUT", "applicants/$applicantId/notes/$id",[
             'headers' =>  [
                 'api_token' => self::$apiKey,
             ],
